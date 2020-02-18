@@ -1,15 +1,14 @@
 package com.cherryj.rentbill.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "useraccount")
-@JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
 public class UserAccount implements Serializable {
 
     @Id
@@ -32,4 +31,8 @@ public class UserAccount implements Serializable {
     @Column(name = "passwordHash", length = 128, nullable = false)
     private @Getter @Setter String passwordHash;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "useraccount_userrole_rel", joinColumns = { @JoinColumn(name = "userAccountId") }, inverseJoinColumns = {
+            @JoinColumn(name = "userRoleId") })
+    private @Getter @Setter List<UserRole> roles;
 }
