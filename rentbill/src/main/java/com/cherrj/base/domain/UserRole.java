@@ -1,6 +1,5 @@
-package com.cherryj.rentbill.domain;
+package com.cherrj.base.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,4 +1,4 @@
-package com.cherryj.rentbill.domain;
+package com.cherrj.base.domain;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;

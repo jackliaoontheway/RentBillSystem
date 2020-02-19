@@ -1,9 +1,9 @@
-package com.cherryj.rentbill.common.model;
+package com.cherrj.base.common.model;
 
 import lombok.Getter;
 import lombok.Setter;
 
-public class Request <T>{
+public class Request<T> {
 
     private @Getter
     @Setter

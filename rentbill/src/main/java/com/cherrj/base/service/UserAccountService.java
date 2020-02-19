@@ -1,7 +1,7 @@
-package com.cherryj.rentbill.service;
+package com.cherrj.base.service;
 
-import com.cherryj.rentbill.common.model.Response;
-import com.cherryj.rentbill.domain.UserAccount;
+import com.cherrj.base.common.model.Response;
+import com.cherrj.base.domain.UserAccount;
 
 public interface UserAccountService {
 

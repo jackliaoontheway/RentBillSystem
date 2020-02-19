@@ -1,11 +1,7 @@
-package com.cherryj.rentbill.controller;
+package com.cherrj.base.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 public abstract class BaseController {
 

@@ -1,4 +1,4 @@
-package com.cherryj.rentbill.common.model;
+package com.cherrj.base.common.model;
 
 public enum ResponseStatus {
 

@@ -1,10 +1,10 @@
-package com.cherryj.rentbill.controller;
+package com.cherrj.base.controller;
 
-import com.cherryj.rentbill.common.model.Request;
-import com.cherryj.rentbill.common.model.Response;
-import com.cherryj.rentbill.common.model.ResponseStatus;
-import com.cherryj.rentbill.domain.UserAccount;
-import com.cherryj.rentbill.service.UserAccountService;
+import com.cherrj.base.common.model.Request;
+import com.cherrj.base.common.model.Response;
+import com.cherrj.base.common.model.ResponseStatus;
+import com.cherrj.base.domain.UserAccount;
+import com.cherrj.base.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;

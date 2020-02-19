@@ -1,10 +1,10 @@
-package com.cherryj.rentbill.service;
+package com.cherrj.base.service;
 
-import com.cherryj.rentbill.common.model.Response;
-import com.cherryj.rentbill.common.model.ResponseStatus;
-import com.cherryj.rentbill.common.utils.CryptoUtil;
-import com.cherryj.rentbill.domain.UserAccount;
-import com.cherryj.rentbill.domain.UserAccountRepository;
+import com.cherrj.base.common.model.Response;
+import com.cherrj.base.common.model.ResponseStatus;
+import com.cherrj.base.common.utils.CryptoUtil;
+import com.cherrj.base.domain.UserAccount;
+import com.cherrj.base.domain.UserAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
