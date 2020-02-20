@@ -41,7 +41,7 @@ public class GenerateCodeUtils {
         logger.info("Will generate {}'s Repos, Service, ServiceImpl, Controller code.", domainName);
         Map<String, String> codeTypes = new HashMap<>();
         codeTypes.put("Domain", "domain"); //Domain
-//        codeTypes.put("Repository", "domain");
+        codeTypes.put("Repository", "domain");
 //        codeTypes.put("Service", "service");
 //        codeTypes.put("ServiceImpl", "service/impl");
 //        codeTypes.put("Controller", "controller");
@@ -59,6 +59,9 @@ public class GenerateCodeUtils {
             dir.mkdirs();
         }
         String fileName = folder + "/" + domainName + codeType + ".java";
+        if(codeType.equals("Domain")) {
+            fileName = folder + "/" + domainName + ".java";
+        }
         File f = new File(fileName);
         if (f.exists()) {
             logger.info(domainName + "'s base code is exists.");

@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "{lowercaseDomainName}")
-public class {domainName}Domain extends BaseDomain {
+public class {domainName} extends BaseDomain {
 
 
 }
