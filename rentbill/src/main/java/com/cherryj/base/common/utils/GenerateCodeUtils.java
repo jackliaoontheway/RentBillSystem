@@ -16,7 +16,7 @@ public class GenerateCodeUtils {
     // ****************************需要修改的部分******************************
     private String srcFolder = System.getProperty("user.dir") + "/src/main/java/";
     private String domainPackageName = "com.cherryj.rentbill";
-    private String domainName = "Room";
+    private String domainName = "Building";
     // *********************************************************************
 
     public static void main(String[] args) {

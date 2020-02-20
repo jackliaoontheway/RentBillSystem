@@ -6,8 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "room")
-public class Room extends BaseDomain {
+@Table(name = "building")
+public class Building extends BaseDomain {
 
 
 }

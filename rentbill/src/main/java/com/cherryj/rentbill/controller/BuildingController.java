@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/{lowercaseModelName}")
-public class RoomController extends BaseController {
+public class BuildingController extends BaseController {
 
 
 }

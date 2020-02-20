@@ -1,9 +1,11 @@
 package {domainPackageName}.service.impl;
 
+import {domainPackageName}.domain.{domainName};
 import {domainPackageName}.service.{domainName}Service;
 import org.springframework.stereotype.Service;
+import com.cherryj.base.service.BaseServiceImpl;
 
 @Service
-public class {domainName}ServiceImpl implements {domainName}Service {
+public class {domainName}ServiceImpl extends BaseServiceImpl<{domainName}> implements {domainName}Service {
 
 }
