@@ -1,4 +1,4 @@
-package com.cherrj.base.common.utils;
+package com.cherryj.base.common.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,8 +15,8 @@ public class GenerateCodeUtils {
 
     // ****************************需要修改的部分******************************
     private String srcFolder = System.getProperty("user.dir") + "/src/main/java/";
-    private String domainPackageName = "com.cherrj.rentill";
-    private String domainName = "Building";
+    private String domainPackageName = "com.cherryj.rentbill";
+    private String domainName = "Room";
     // *********************************************************************
 
     public static void main(String[] args) {
@@ -40,11 +40,11 @@ public class GenerateCodeUtils {
 
         logger.info("Will generate {}'s Repos, Service, ServiceImpl, Controller code.", domainName);
         Map<String, String> codeTypes = new HashMap<>();
-        codeTypes.put("", "domain"); //Domain
-        codeTypes.put("Repository", "domain");
-        codeTypes.put("Service", "service");
-        codeTypes.put("ServiceImpl", "service/impl");
-        codeTypes.put("Controller", "controller");
+        codeTypes.put("Domain", "domain"); //Domain
+//        codeTypes.put("Repository", "domain");
+//        codeTypes.put("Service", "service");
+//        codeTypes.put("ServiceImpl", "service/impl");
+//        codeTypes.put("Controller", "controller");
         for (String codeType : codeTypes.keySet()) {
             generateCodeByTemplate(domainName, codeType, codeTypes.get(codeType));
         }
@@ -80,10 +80,10 @@ public class GenerateCodeUtils {
     }
 
     private String getTemplateFileContent(String codeType) throws Exception {
-        String templateFile = "model." + codeType.toLowerCase() + ".template.txt";
+        String templateFile = "domain." + codeType.toLowerCase() + ".template.txt";
 
         StringBuilder templateStr = new StringBuilder();
-        InputStream fr = new FileInputStream("codetemplate" + templateFile);
+        InputStream fr = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/codetemplate/" + templateFile);
         byte[] b = new byte[4096];
         fr.read(b);
         fr.close();

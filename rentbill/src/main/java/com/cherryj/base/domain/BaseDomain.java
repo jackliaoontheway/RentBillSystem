@@ -1,4 +1,4 @@
-package com.cherrj.base.domain;
+package com.cherryj.base.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

@@ -1,6 +1,6 @@
 package com.cherryj.rentbill.domain;
 
-import com.cherrj.base.domain.BaseDomain;
+import com.cherryj.base.domain.BaseDomain;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Column;

@@ -1,10 +1,10 @@
-package com.cherrj.base.controller;
+package com.cherryj.base.controller;
 
-import com.cherrj.base.common.model.Request;
-import com.cherrj.base.common.model.Response;
-import com.cherrj.base.common.model.ResponseStatus;
-import com.cherrj.base.domain.UserAccount;
-import com.cherrj.base.service.UserAccountService;
+import com.cherryj.base.common.model.Request;
+import com.cherryj.base.common.model.Response;
+import com.cherryj.base.common.model.ResponseStatus;
+import com.cherryj.base.domain.UserAccount;
+import com.cherryj.base.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;

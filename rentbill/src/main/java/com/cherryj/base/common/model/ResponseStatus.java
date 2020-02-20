@@ -1,4 +1,4 @@
-package com.cherrj.base.common.model;
+package com.cherryj.base.common.model;
 
 public enum ResponseStatus {
 

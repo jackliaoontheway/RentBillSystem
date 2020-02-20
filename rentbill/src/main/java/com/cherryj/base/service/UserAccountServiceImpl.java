@@ -1,10 +1,10 @@
-package com.cherrj.base.service;
+package com.cherryj.base.service;
 
-import com.cherrj.base.common.model.Response;
-import com.cherrj.base.common.model.ResponseStatus;
-import com.cherrj.base.common.utils.CryptoUtil;
-import com.cherrj.base.domain.UserAccount;
-import com.cherrj.base.domain.UserAccountRepository;
+import com.cherryj.base.common.model.Response;
+import com.cherryj.base.common.model.ResponseStatus;
+import com.cherryj.base.common.utils.CryptoUtil;
+import com.cherryj.base.domain.UserAccount;
+import com.cherryj.base.domain.UserAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

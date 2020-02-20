@@ -1,11 +1,9 @@
-package com.cherrj.base.domain;
+package com.cherryj.base.domain;
 
-import com.fasterxml.jackson.databind.ser.Serializers;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "functionality")

@@ -1,10 +1,9 @@
-package com.cherrj.base.domain;
+package com.cherryj.base.domain;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity

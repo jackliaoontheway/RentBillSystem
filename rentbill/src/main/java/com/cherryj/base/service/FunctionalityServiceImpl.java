@@ -1,4 +1,4 @@
-package com.cherrj.base.service;
+package com.cherryj.base.service;
 
 import org.springframework.stereotype.Service;
 

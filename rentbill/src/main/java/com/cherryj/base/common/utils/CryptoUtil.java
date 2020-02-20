@@ -1,4 +1,4 @@
-package com.cherrj.base.common.utils;
+package com.cherryj.base.common.utils;
 
 
 import org.slf4j.Logger;

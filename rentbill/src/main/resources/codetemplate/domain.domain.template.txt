@@ -1,13 +1,13 @@
-package {domainPackageName};
+package {domainPackageName}.domain;
 
-import com.cherrj.base.domain.BaseDomain;
+import com.cherryj.base.domain.BaseDomain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "{lowercaseDomainName}")
-public class {domainName} extends BaseDomain {
+public class {domainName}Domain extends BaseDomain {
 
 
 }
