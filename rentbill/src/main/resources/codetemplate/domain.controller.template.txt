@@ -1,12 +1,15 @@
 package {domainPackageName}.controller;
 
+import {domainPackageName}.domain.{domainName};
+import {domainPackageName}.service.{domainName}Service;
+
 import com.cherryj.base.controller.BaseController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/{lowercaseDomainName}")
-public class {domainName}Controller extends BaseController {
+public class {domainName}Controller extends BaseController<{domainName},{domainName}Service> {
 
 
 }

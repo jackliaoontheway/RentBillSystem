@@ -16,7 +16,7 @@ public interface BaseService<T extends BaseDomain> {
 
     T getById(Integer id);
 
-    List<T> listAll(Integer operatorId);
+    List<T> listAll();
 
     Page<T> listByPage(Pageable pageable);
 

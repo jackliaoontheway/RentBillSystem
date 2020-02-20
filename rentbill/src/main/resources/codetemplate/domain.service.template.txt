@@ -1,6 +1,9 @@
 package {domainPackageName}.service;
 
-public interface {domainName}Service {
+import com.cherryj.base.service.BaseService;
+import {domainPackageName}.domain.{domainName};
+
+public interface {domainName}Service extends BaseService<{domainName}> {
 
 
 }

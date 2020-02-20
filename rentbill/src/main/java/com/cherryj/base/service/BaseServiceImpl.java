@@ -54,7 +54,7 @@ public abstract class BaseServiceImpl<T extends BaseDomain> implements BaseServi
     }
 
     @Override
-    public List<T> listAll(Integer operatorId) {
+    public List<T> listAll() {
         return repository.findAll();
     }
 

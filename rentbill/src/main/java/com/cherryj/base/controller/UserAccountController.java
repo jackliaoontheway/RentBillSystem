@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/useraccount")
-public class UserAccountController extends BaseController {
+public class UserAccountController {
 
     @Autowired
     private UserAccountService userAccountService;
