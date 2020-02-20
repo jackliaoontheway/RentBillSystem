@@ -1,0 +1,8 @@
+package {domainPackageName}.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class {domainName}ServiceImpl implements {domainName}Service {
+
+}

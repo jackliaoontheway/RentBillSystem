@@ -9,19 +9,18 @@ import java.util.List;
 
 @Entity
 @Table(name = "userrole")
-public class UserRole implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
-    private @Getter @Setter int id;
+public class UserRole extends BaseDomain {
 
     @Column(name = "userName", length = 128)
-    private @Getter @Setter String roleName;
+    private @Getter
+    @Setter
+    String roleName;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "userrole_functionality_rel", joinColumns = { @JoinColumn(name = "userRoleId") }, inverseJoinColumns = {
-            @JoinColumn(name = "functionalityId") })
-    private @Getter @Setter List<Functionality> functionalities;
+    @JoinTable(name = "userrole_functionality_rel", joinColumns = {@JoinColumn(name = "userRoleId")}, inverseJoinColumns = {
+            @JoinColumn(name = "functionalityId")})
+    private @Getter
+    @Setter
+    List<Functionality> functionalities;
 
 }

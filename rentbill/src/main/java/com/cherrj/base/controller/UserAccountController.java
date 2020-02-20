@@ -7,9 +7,11 @@ import com.cherrj.base.domain.UserAccount;
 import com.cherrj.base.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "*",maxAge = 360000)
 @RestController
 @RequestMapping("/useraccount")
 public class UserAccountController extends BaseController {

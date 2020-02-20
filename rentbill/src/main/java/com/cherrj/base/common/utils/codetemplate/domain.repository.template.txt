@@ -1,0 +1,7 @@
+package {modelPackageName}.domain;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface {domainName}Repository extends JpaRepository<{domainName}, Integer> {
+
+}

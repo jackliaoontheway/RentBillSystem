@@ -1,0 +1,6 @@
+package {domainPackageName}.service;
+
+public interface {domainName}Service {
+
+
+}
