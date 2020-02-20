@@ -1,5 +1,6 @@
-package {domainPackageName}.service;
+package {domainPackageName}.service.impl;
 
+import {domainPackageName}.service.{domainName}Service;
 import org.springframework.stereotype.Service;
 
 @Service

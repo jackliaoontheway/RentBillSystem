@@ -40,11 +40,11 @@ public class GenerateCodeUtils {
 
         logger.info("Will generate {}'s Repos, Service, ServiceImpl, Controller code.", domainName);
         Map<String, String> codeTypes = new HashMap<>();
-        codeTypes.put("Domain", "domain"); //Domain
+        codeTypes.put("Domain", "domain");
         codeTypes.put("Repository", "domain");
-//        codeTypes.put("Service", "service");
-//        codeTypes.put("ServiceImpl", "service/impl");
-//        codeTypes.put("Controller", "controller");
+        codeTypes.put("Service", "service");
+        codeTypes.put("ServiceImpl", "service/impl");
+        codeTypes.put("Controller", "controller");
         for (String codeType : codeTypes.keySet()) {
             generateCodeByTemplate(domainName, codeType, codeTypes.get(codeType));
         }
@@ -59,7 +59,7 @@ public class GenerateCodeUtils {
             dir.mkdirs();
         }
         String fileName = folder + "/" + domainName + codeType + ".java";
-        if(codeType.equals("Domain")) {
+        if (codeType.equals("Domain")) {
             fileName = folder + "/" + domainName + ".java";
         }
         File f = new File(fileName);
