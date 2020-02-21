@@ -8,11 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*",maxAge = 360000)
 public abstract class BaseController<M extends BaseDomain, S extends BaseService<M>> {
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());

@@ -9,11 +9,15 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "building")
-public class Building extends BaseDomain {
+@Table(name = "room")
+public class Room extends BaseDomain {
 
-    @Column(name = "categoryName", length = 128)
+    @Column(name = "status", length = 128)
     private @Getter
     @Setter
-    String buildingNumber;
+    String status;
+
+    @Column(name = "categoryName", length = 128)
+    private @Getter @Setter String roomNumber;
+
 }
