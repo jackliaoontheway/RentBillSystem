@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/room")
-public class RoomController extends BaseController<Room,RoomService> {
+public class RoomController extends BaseController<Room, RoomService> {
 
 
 }

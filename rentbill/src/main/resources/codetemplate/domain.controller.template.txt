@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/{lowercaseDomainName}")
-public class {domainName}Controller extends BaseController<{domainName},{domainName}Service> {
+public class {domainName}Controller extends BaseController<{domainName}, {domainName}Service> {
 
 
 }
