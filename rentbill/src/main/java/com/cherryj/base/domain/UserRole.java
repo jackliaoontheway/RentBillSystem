@@ -10,10 +10,15 @@ import java.util.List;
 @Table(name = "userrole")
 public class UserRole extends BaseDomain {
 
-    @Column(name = "userName", length = 128)
+    @Column(name = "code", length = 128)
     private @Getter
     @Setter
-    String roleName;
+    String code;
+
+    @Column(name = "name", length = 128)
+    private @Getter
+    @Setter
+    String name;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "userrole_functionality_rel", joinColumns = {@JoinColumn(name = "userRoleId")}, inverseJoinColumns = {

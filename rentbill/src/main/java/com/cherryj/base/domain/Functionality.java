@@ -9,6 +9,12 @@ import javax.persistence.*;
 @Table(name = "functionality")
 public class Functionality extends BaseDomain {
 
+    @Column(name = "code", length = 128)
+    private @Getter
+    @Setter
+    String code;
+
+
     @Column(name = "name", length = 128)
     private @Getter
     @Setter

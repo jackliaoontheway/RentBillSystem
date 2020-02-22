@@ -15,6 +15,11 @@ public class UserAccount extends BaseDomain {
     @Setter
     String userName;
 
+    @Column(name = "status", length = 128)
+    private @Getter
+    @Setter
+    String status;
+
     /**
      * 注册时从页面传过来的密码
      */

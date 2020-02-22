@@ -10,4 +10,6 @@ public interface UserAccountService {
     Response<UserAccount> login(UserAccount userAccount);
 
     UserAccount findById(Integer userAccountId);
+
+    UserAccount findByUserName(String userName);
 }

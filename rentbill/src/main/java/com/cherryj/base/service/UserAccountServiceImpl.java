@@ -60,4 +60,9 @@ public class UserAccountServiceImpl implements UserAccountService {
     public UserAccount findById(Integer userAccountId) {
         return userAccountRepository.getOne(userAccountId);
     }
+
+    @Override
+    public UserAccount findByUserName(String userName) {
+        return userAccountRepository.findByUserName(userName);
+    }
 }
