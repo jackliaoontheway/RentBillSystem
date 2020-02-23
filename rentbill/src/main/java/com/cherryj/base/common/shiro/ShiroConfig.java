@@ -34,15 +34,15 @@ public class ShiroConfig {
     @Bean
     public HashedCredentialsMatcher hashedCredentialsMatcher() {
         HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-        hashedCredentialsMatcher.setHashAlgorithmName(PasswordHelper.ALGORITHM_NAME); // 散列算法
-        hashedCredentialsMatcher.setHashIterations(PasswordHelper.HASH_ITERATIONS); // 散列次数
+        hashedCredentialsMatcher.setHashAlgorithmName("md5"); // 散列算法
+        hashedCredentialsMatcher.setHashIterations(2); // 散列次数
         return hashedCredentialsMatcher;
     }
 
     @Bean
     public CherryJShiroRealm shiroRealm() {
         CherryJShiroRealm shiroRealm = new CherryJShiroRealm();
-        shiroRealm.setCredentialsMatcher(hashedCredentialsMatcher()); // 原来在这里
+        shiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
         return shiroRealm;
     }
 
@@ -51,10 +51,5 @@ public class ShiroConfig {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(shiroRealm());
         return securityManager;
-    }
-
-    @Bean
-    public PasswordHelper passwordHelper() {
-        return new PasswordHelper();
     }
 }

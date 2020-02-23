@@ -4,28 +4,29 @@ import com.cherryj.base.domain.Functionality;
 import com.cherryj.base.domain.UserAccount;
 import com.cherryj.base.domain.UserRole;
 import com.cherryj.base.service.UserAccountService;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class CherryJShiroRealm extends AuthorizingRealm {
 
-//    @Autowired
-//    private UserAccountService userService;
+    @Autowired
+    private UserAccountService userService;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 
-        UserAccount userAcc = (UserAccount) SecurityUtils.getSubject().getPrincipal();
-        UserAccount user = (UserAccount) principals.getPrimaryPrincipal();
-
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
+        String username = (String) principals.getPrimaryPrincipal();
+
+        UserAccount user = userService.findByUserName(username);
+
         for (UserRole role : user.getRoles()) {
             authorizationInfo.addRole(role.getCode());
             List<Functionality> functionalities = role.getFunctionalities();
@@ -40,11 +41,13 @@ public class CherryJShiroRealm extends AuthorizingRealm {
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-        UserAccount user = (UserAccount) token.getPrincipal();
+        String username = (String) token.getPrincipal();
+        UserAccount user = userService.findByUserName(username);
         if (user == null) {
             throw new AccountException("Username or password incorrect.");
         }
-        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user, user.getUserName(), getName());
+        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getUserName(), user.getPassword(),
+                ByteSource.Util.bytes(user.getPasswordSalt()), getName());
         return authenticationInfo;
     }
 

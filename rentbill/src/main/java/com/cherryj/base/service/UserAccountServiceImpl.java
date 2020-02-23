@@ -2,7 +2,7 @@ package com.cherryj.base.service;
 
 import com.cherryj.base.common.model.Response;
 import com.cherryj.base.common.model.ResponseStatus;
-import com.cherryj.base.common.utils.CryptoUtil;
+import com.cherryj.base.common.shiro.CryptoUtil;
 import com.cherryj.base.domain.UserAccount;
 import com.cherryj.base.domain.UserAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +28,8 @@ public class UserAccountServiceImpl implements UserAccountService {
 
         UserAccount registerUserAccount = new UserAccount();
         registerUserAccount.setUserName(userAccount.getUserName());
-        registerUserAccount.setPasswordSalt(CryptoUtil.generateSalt());
-        registerUserAccount.setPasswordHash(CryptoUtil.hashPassword(userAccount.getPassword(), registerUserAccount.getPasswordSalt()));
+
+        CryptoUtil.encryptPassword(userAccount);
 
         registerUserAccount = userAccountRepository.save(registerUserAccount);
         response.setData(registerUserAccount);
