@@ -31,14 +31,18 @@ public abstract class BaseServiceImpl<T extends BaseDomain> implements BaseServi
     }
 
     @Override
-    public T update(T domain, Integer operatorId) {
-        initialBeforeUpdate(domain);
-        domain.setModifiedBy(operatorId);
-        domain.setModifiedDate(new Date());
-        return repository.save(domain);
+    public T update(T domainFromView, Integer operatorId) {
+        T existedDomain = this.getById(domainFromView.getId());
+
+        initialBeforeUpdate(domainFromView, existedDomain);
+
+        existedDomain.setModifiedBy(operatorId);
+        existedDomain.setModifiedDate(new Date());
+        return repository.save(existedDomain);
     }
 
-    protected void initialBeforeUpdate(T domain) {
+    //TODO abstract
+    protected void initialBeforeUpdate(T source, T target) {
 
     }
 

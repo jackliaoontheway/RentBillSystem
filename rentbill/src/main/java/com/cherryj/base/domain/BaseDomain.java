@@ -19,7 +19,7 @@ abstract class BaseDomain implements Serializable {
     @Column
     private @Getter
     @Setter
-    int id;
+    Integer id;
 
     @Column(nullable = false)
     private @Getter

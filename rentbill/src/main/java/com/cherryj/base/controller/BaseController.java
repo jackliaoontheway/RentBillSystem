@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 360000)
@@ -28,38 +27,27 @@ public abstract class BaseController<M extends BaseDomain, S extends BaseService
     @Autowired
     private S service;
 
-    @PostMapping("create")
-    public Response<M> create(@RequestBody M domain) {
+    @PostMapping("save")
+    public Response<M> save(@RequestBody M domain) {
         Response<M> response = new Response<>();
         if (domain == null) {
             response.setStatus(ResponseStatus.RequestParameterError.name());
             response.setMsg("Request parameter is null");
             return response;
         }
-        if (!validateBeforeCreate(domain, response)) {
+        if (!validateBeforeSave(domain, response)) {
             return response;
         }
-        response.setData(service.create(domain, -1));
+        if (domain.getId() == null) {
+            response.setData(service.create(domain, -1));
+        } else {
+            response.setData(service.update(domain, -1));
+        }
         return response;
     }
 
-    protected boolean validateBeforeCreate(M domain, Response<M> response) {
+    protected boolean validateBeforeSave(M domain, Response<M> response) {
         return true;
-    }
-
-    @PostMapping("update")
-    public Response<M> update(@RequestBody M domain) {
-        Response<M> response = new Response<>();
-        if (domain == null) {
-            response.setStatus(ResponseStatus.RequestParameterError.name());
-            response.setMsg("Request parameter is null");
-            return response;
-        }
-        if (!validateBeforeCreate(domain, response)) {
-            return response;
-        }
-        response.setData(service.update(domain, -1));
-        return response;
     }
 
     @PostMapping("delete")
