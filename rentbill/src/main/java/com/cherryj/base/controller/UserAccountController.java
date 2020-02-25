@@ -46,9 +46,9 @@ public class UserAccountController {
     }
 
     @PostMapping("login")
-    public Response<UserAccount> login(@RequestBody UserAccount userAccount) {
+    public Response<Boolean> login(@RequestBody UserAccount userAccount) {
 
-        Response<UserAccount> response = new Response<>();
+        Response<Boolean> response = new Response<>();
 
         if (userAccount == null) {
             response.setStatus(ResponseStatus.RequestParameterError.name());

@@ -7,7 +7,7 @@ public interface UserAccountService {
 
     Response<UserAccount> register(UserAccount userAccount);
 
-    Response<UserAccount> login(UserAccount userAccount);
+    Response<Boolean> login(UserAccount userAccount);
 
     UserAccount findById(Integer userAccountId);
 

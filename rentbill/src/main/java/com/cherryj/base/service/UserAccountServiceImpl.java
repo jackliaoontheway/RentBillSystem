@@ -5,6 +5,10 @@ import com.cherryj.base.common.model.ResponseStatus;
 import com.cherryj.base.common.shiro.CryptoUtil;
 import com.cherryj.base.domain.UserAccount;
 import com.cherryj.base.domain.UserAccountRepository;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,22 +41,18 @@ public class UserAccountServiceImpl implements UserAccountService {
     }
 
     @Override
-    public Response<UserAccount> login(UserAccount userAccount) {
-        Response<UserAccount> response = new Response<>();
-
-        UserAccount existedUserAccount = userAccountRepository.findByUserName(userAccount.getUserName());
-        if (existedUserAccount == null) {
+    public Response<Boolean> login(UserAccount userAccount) {
+        Response<Boolean> response = new Response<>();
+        UsernamePasswordToken token = new UsernamePasswordToken(userAccount.getUserName(), userAccount.getPassword());
+        Subject subject = SecurityUtils.getSubject();
+        try {
+            subject.login(token);
+        } catch (AuthenticationException e) {
             response.setStatus(ResponseStatus.RequestParameterError.name());
             response.setMsg("Username or password is incorrect.");
             return response;
         }
-
-        if (!CryptoUtil.validatePassword(existedUserAccount.getPasswordHash(), userAccount.getPassword(), existedUserAccount.getPasswordSalt())) {
-            response.setStatus(ResponseStatus.RequestParameterError.name());
-            response.setMsg("Username or password is incorrect.");
-            return response;
-        }
-        response.setData(existedUserAccount);
+        response.setData(subject.isAuthenticated());
         return response;
     }
 
